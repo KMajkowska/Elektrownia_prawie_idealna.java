@@ -3,6 +3,7 @@ package com.company;
 
 import com.company.AtakTerro.Sposob1ReakcjaNaAtakTerrorystyczny;
 import com.company.Awarie.Sposob1ReakcjaNaAwarieZasilania;
+import com.company.Dochod.DochodFotowoltaiczna;
 import com.company.Wytwarzanie.ZamianaEnegiiPromieniowaniaSlonecznego;
 import com.company.uslugodawcy.DystrybutorPradu;
 
@@ -24,6 +25,7 @@ public class ElektrowniaFotowoltaiczna extends Elektrownia {
 		reakcjaNaAwarieZasilania = new Sposob1ReakcjaNaAwarieZasilania();
 		reakcjeNaAtakTerrorystyczny = new Sposob1ReakcjaNaAtakTerrorystyczny();
 		wytwarzanieEnergiiElektrycznej = new ZamianaEnegiiPromieniowaniaSlonecznego();
+		obliczDochodElektrowni = new DochodFotowoltaiczna();
 	}
 
 	
@@ -53,6 +55,6 @@ public class ElektrowniaFotowoltaiczna extends Elektrownia {
 
 	@Override
 	public float ObliczDochod(Elektrownia e) {
-		return 0;
+		return obliczDochodElektrowni.ObliczDochod(this);
 	}
 }
