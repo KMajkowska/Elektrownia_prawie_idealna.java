@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 
 public class Gracz implements Serializable {
-    private int balans;
+    private float balans;
     private List <Elektrownia> listaElektrowni;
     private static final long serialVersionUID = 1L;
 
@@ -95,11 +95,11 @@ public class Gracz implements Serializable {
                 '}';
     }
 
-    public int getBalans() {
+    public float getBalans() {
         return balans;
     }
 
-    public void setBalans(int balans) {
+    public void setBalans(float balans) {
         this.balans = balans;
     }
 

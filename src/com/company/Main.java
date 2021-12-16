@@ -42,7 +42,7 @@ public class Main {
                 gracz.getListaElektrowni().get(i).setCzyPracuje(true);
             }
             for (int i = 0; i < (gracz.getListaElektrowni()).size(); i++) {
-                (gracz.getListaElektrowni()).get(i).ObliczDochod(gracz.getListaElektrowni().get(i));
+               gracz.setBalans(gracz.getBalans() + (gracz.getListaElektrowni()).get(i).ObliczDochod(gracz.getListaElektrowni().get(i)));
             }
             boolean f = true;
             while (f) {
@@ -108,6 +108,7 @@ public class Main {
             }
             for (int i = 0; i < gracz.getListaElektrowni().size(); i++) {
                 rozneWydarzeniaLosowe(gracz.getListaElektrowni().get(i));
+
             }
         }
         System.out.println("Twoje pieniadze sie skonczyły, koniec gry!");
