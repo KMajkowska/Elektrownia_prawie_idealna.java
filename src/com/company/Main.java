@@ -102,6 +102,7 @@ public class Main {
                                 return;
                             default:
                                 f = false;
+                                Serializacja.zapis(gracz);
                         }
                     }
                 }
