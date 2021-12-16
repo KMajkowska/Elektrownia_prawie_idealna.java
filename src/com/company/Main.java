@@ -41,7 +41,7 @@ public class Main {
                 gracz.getListaElektrowni().get(i).setCzyPracuje(true);
             }
             for (int i = 0; i < (gracz.getListaElektrowni()).size(); i++) {
-                (gracz.getListaElektrowni()).get(i).ObliczDochod();
+                (gracz.getListaElektrowni()).get(i).ObliczDochod(gracz.getListaElektrowni().get(i));
             }
             boolean f = true;
             while (f) {
