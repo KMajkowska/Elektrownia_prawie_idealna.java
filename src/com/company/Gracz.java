@@ -27,6 +27,12 @@ public class Gracz implements Serializable {
         OdbiorcaOdpadow Odbiorca2 = new OdbiorcaOdpadow(43.34f, Promyk);
     }
 
+    DystrybutorPradu Tauron = new DystrybutorPradu();
+    DostawcaWegla Rosja = new DostawcaWegla();
+    Wlasciciel NajtanszyOdbiorSmieci = new Wlasciciel("NajtanszyOdbiorSmieci", "PL83762346", "Karol Wiśnia");
+    Wlasciciel Promyk = new Wlasciciel("Promyk", "PL46372837", "Kamil Glik");
+    OdbiorcaOdpadow Odbiorca1 = new OdbiorcaOdpadow(34.56f, NajtanszyOdbiorSmieci);
+    OdbiorcaOdpadow Odbiorca2 = new OdbiorcaOdpadow(43.34f, Promyk);
     public void zakupElektrowni() {
         int numer;
         Elektrownia el = null;

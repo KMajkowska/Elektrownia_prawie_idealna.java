@@ -3,11 +3,11 @@ package com.company.Dochod;
 import com.company.Elektrownia;
 import com.company.ElektrowniaAtomowa;
 
-public class DochodAtomowa implements ObliczDochodElektrowni {
-//    public float ObliczDochod(Elektrownia e){
-//        return 0.55f * e.getMocChwilowa();
-//
-    int cenaZaWode;
+import java.io.Serializable;
+
+public class DochodAtomowa implements ObliczDochodElektrowni, Serializable {
+
+    int cenaZaWode = 10;
 
     @Override
     public float ObliczDochod(Elektrownia e) {

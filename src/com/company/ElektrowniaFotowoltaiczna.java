@@ -12,7 +12,7 @@ import java.io.Serializable;
 public class ElektrowniaFotowoltaiczna extends Elektrownia {
 
 
-	private String ZuzyciePaneli;
+	private float ZuzyciePaneli;
 	
 
 	public ElektrowniaFotowoltaiczna(String Miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, Wlasciciel wlasciciel,
@@ -30,12 +30,12 @@ public class ElektrowniaFotowoltaiczna extends Elektrownia {
 
 	
 	//Metody typu get i metody typu set
-	public String getZuzyciePaneli() 
+	public float getZuzyciePaneli()
 	{
 		return ZuzyciePaneli;
 	}
 
-	public void setZuzyciePaneli(String zuzyciePaneli) 
+	public void setZuzyciePaneli(float zuzyciePaneli)
 	{
 		ZuzyciePaneli = zuzyciePaneli;
 	}
@@ -44,7 +44,7 @@ public class ElektrowniaFotowoltaiczna extends Elektrownia {
 	public void WymienPanele()
 	{
 		
-		this.setZuzyciePaneli("0%");
+		this.setZuzyciePaneli(0);
 	}
 
 	@Override

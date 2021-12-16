@@ -9,10 +9,7 @@ import com.company.uslugodawcy.DystrybutorPradu;
 
 import java.io.Serializable;
 
-public class DochodFotowoltaiczna implements ObliczDochodElektrowni {
-//    public float ObliczDochod(Elektrownia e){
-//        return 0.5f * e.getMocChwilowa();
-//    }
+public class DochodFotowoltaiczna implements ObliczDochodElektrowni, Serializable {
 
     @Override
     public float ObliczDochod(Elektrownia e) {
