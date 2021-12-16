@@ -1,0 +1,98 @@
+package com.company;
+
+        import com.company.uslugodawcy.DostawcaGazu;
+        import com.company.uslugodawcy.DostawcaWegla;
+        import com.company.uslugodawcy.DystrybutorPradu;
+        import com.company.uslugodawcy.OdbiorcaOdpadow;
+
+        import java.io.Serializable;
+        import java.util.ArrayList;
+        import java.util.List;
+        import java.util.Scanner;
+
+
+public class Gracz implements Serializable {
+    private int balans;
+    private List <Elektrownia> listaElektrowni;
+    private static final long serialVersionUID = 1L;
+
+    public Gracz() {
+        balans = 5000;
+        listaElektrowni = new ArrayList<>();
+    }
+
+    public void zakupElektrowni() {
+        int numer;
+        Elektrownia el = null;
+        DystrybutorPradu Tauron = new DystrybutorPradu();
+        DostawcaWegla Rosja = new DostawcaWegla();
+        Wlasciciel NajtanszyOdbiorSmieci = new Wlasciciel("NajtanszyOdbiorSmieci", "PL83762346", "Karol Wiśnia");
+        Wlasciciel Promyk = new Wlasciciel("Promyk", "PL46372837", "Kamil Glik");
+        OdbiorcaOdpadow Odbiorca1 = new OdbiorcaOdpadow(34.56f, NajtanszyOdbiorSmieci);
+        OdbiorcaOdpadow Odbiorca2 = new OdbiorcaOdpadow(43.34f, Promyk);
+        Scanner scan = new Scanner(System.in);
+        Wlasciciel own = new Wlasciciel("FirmaGracza","123456789","PodajNick");
+        System.out.println("Wybierz opcję:" + "\n" +
+                "1 - Elektrownia atomowa" + "\n" +
+                "2 - Elektrownia Węglowa" + "\n" +
+                "3 - Elektrownia Gazowa" + "\n" +
+                "4 - Elektrownia Fotowoltaiczna" + "\n");
+        numer = scan.nextInt();
+        switch (numer) {
+            case 1:
+                el = new ElektrowniaAtomowa("Czarnobyl", 100, 42000, 3, own, false, 86, 897, Tauron, 345, new OdbiorcaOdpadow[]{Odbiorca1,Odbiorca2});
+                listaElektrowni.add(el);
+                break;
+            case 2:
+                el = new ElektrowniaWeglowa("Belchatow",100,690,15, own, false, "roksana wegiel", 109f, 25, Tauron, 103.5f, Rosja, 190f);
+                listaElektrowni.add(el);
+                break;
+            case 3:
+                el= new ElektrowniaGazowa("Turow",100,420,5, own, false, "gaz", 89f, 15, Tauron, 123f, new DostawcaGazu(), 200f);
+                listaElektrowni.add(el);
+                break;
+            case 4:
+                el = new ElektrowniaFotowoltaiczna("Brudzew", 100, 300, 1, own, false, "10%", Tauron);
+                listaElektrowni.add(el);
+                break;
+        }
+    }
+
+
+    public void SprzedajElektrownie() {
+        int a;
+        Scanner scan = new Scanner(System.in);
+        a = scan.nextInt();
+        listaElektrowni.remove(a);
+        balans+=1000;
+    }
+
+    public void show() {
+        for (int i = 0;i<listaElektrowni.size();i++) {
+            System.out.println("Numer: " + i+ " " + listaElektrowni.get(i));
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "listaElektrowni=" + listaElektrowni +
+                '}';
+    }
+
+    public int getBalans() {
+        return balans;
+    }
+
+    public void setBalans(int balans) {
+        this.balans = balans;
+    }
+
+    public void setListaElektrowni(List<Elektrownia> listaElektrowni) {
+        this.listaElektrowni = listaElektrowni;
+    }
+
+    public List<Elektrownia> getListaElektrowni() {
+        return listaElektrowni;
+    }
+
+}
