@@ -20,6 +20,8 @@ import static com.company.Symulator.*;
 public class Main {
 
     public static void main(String[] args) {
+        ElektrowniaAtomowa atom = new ElektrowniaAtomowa("Czarnobyl", 100, 42000, 3, new Wlasciciel(), false, 86, 897, new DystrybutorPradu(), 345, new OdbiorcaOdpadow[]{new OdbiorcaOdpadow(),new OdbiorcaOdpadow()});
+        System.out.println(atom.ObliczDochod(atom));
 
         Gracz gracz = null;
         Scanner scan = new Scanner(System.in);
@@ -102,6 +104,7 @@ public class Main {
                                 return;
                             default:
                                 f = false;
+                                Serializacja.zapis(gracz);
                         }
                     }
                 }

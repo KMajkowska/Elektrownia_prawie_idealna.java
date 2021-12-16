@@ -15,6 +15,8 @@ public class Gracz implements Serializable {
     private float balans;
     private List <Elektrownia> listaElektrowni;
     private static final long serialVersionUID = 1L;
+    Elektrownia el = null;
+    private DystrybutorPradu dystrybutorPradu;
 
     public Gracz() {
         balans = 6000f;
@@ -35,13 +37,7 @@ public class Gracz implements Serializable {
     OdbiorcaOdpadow Odbiorca2 = new OdbiorcaOdpadow(43.34f, Promyk);
     public void zakupElektrowni() {
         int numer;
-        Elektrownia el = null;
-        DystrybutorPradu Tauron = new DystrybutorPradu();
-        DostawcaWegla Rosja = new DostawcaWegla();
-        Wlasciciel NajtanszyOdbiorSmieci = new Wlasciciel("NajtanszyOdbiorSmieci", "PL83762346", "Karol Wiśnia");
-        Wlasciciel Promyk = new Wlasciciel("Promyk", "PL46372837", "Kamil Glik");
-        OdbiorcaOdpadow Odbiorca1 = new OdbiorcaOdpadow(34.56f, NajtanszyOdbiorSmieci);
-        OdbiorcaOdpadow Odbiorca2 = new OdbiorcaOdpadow(43.34f, Promyk);
+
         Scanner scan = new Scanner(System.in);
         Wlasciciel own = new Wlasciciel("FirmaGracza","123456789","PodajNick");
         System.out.println("Wybierz opcję:" + "\n" +
