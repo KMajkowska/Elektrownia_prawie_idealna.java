@@ -35,7 +35,7 @@ public class Main {
             default:
                 System.out.println("Niewłasciwy wybór");
         }
-        while(true) {
+        while(gracz.getBalans()>0) {
             for (int i = 0; i < gracz.getListaElektrowni().size(); i++) {
                 gracz.getListaElektrowni().get(i).setMocChwilowa(100);
                 gracz.getListaElektrowni().get(i).setCzyPracuje(true);
@@ -66,7 +66,8 @@ public class Main {
                                 "2 - Wybierz reakcję na awarie zasilania" + "\n" +
                                 "3 - Wybierz reakcję na atak terrorystyczny" + "\n" +
                                 "4 - Sprzedaj elektrownie" + "\n" +
-                                "5 (i inne) - Przejdz do nastepnego dnia + \n");
+                                "5 - Pokarz posiadane elektrownie \n" +
+                                "6 (i inne) - Przejdz do nastepnego dnia + \n");
                         numer = scan.nextInt();
                         switch (numer) {
                             case 1:
@@ -83,6 +84,10 @@ public class Main {
                             case 4:
                                 gracz.SprzedajElektrownie();
                                 break;
+                            case 5:
+                                gracz.show();
+                                break;
+
                             default:
                                 f = false;
                         }
