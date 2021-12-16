@@ -1,6 +1,7 @@
 package com.company;
 import com.company.AtakTerro.Sposob2ReakcjaNaAtakTerrorystyczny;
 import com.company.Awarie.Sposob1ReakcjaNaAwarieZasilania;
+import com.company.Dochod.DochodAtomowa;
 import com.company.Wytwarzanie.RozszczepPierwiastkowPromieniotworczych;
 import com.company.uslugodawcy.DystrybutorPradu;
 import com.company.uslugodawcy.OdbiorcaOdpadow;
@@ -26,6 +27,7 @@ public class ElektrowniaAtomowa extends Elektrownia {
         reakcjaNaAwarieZasilania = new Sposob1ReakcjaNaAwarieZasilania();
         reakcjeNaAtakTerrorystyczny = new Sposob2ReakcjaNaAtakTerrorystyczny();
         wytwarzanieEnergiiElektrycznej = new RozszczepPierwiastkowPromieniotworczych();
+        obliczDochodElektrowni = new DochodAtomowa();
     }
 
     public void ZwiekszMoc() {
@@ -94,6 +96,6 @@ public class ElektrowniaAtomowa extends Elektrownia {
 
     @Override
     public float ObliczDochod(Elektrownia e) {
-        return 0;
+        return obliczDochodElektrowni.ObliczDochod(this);
     }
 }

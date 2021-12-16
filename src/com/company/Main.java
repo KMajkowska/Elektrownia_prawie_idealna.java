@@ -33,7 +33,7 @@ public class Main {
         boolean f = true;
         while(f) {
             for(int i = 0; i < (gracz.getListaElektrowni()).size(); i++){
-                (gracz.getListaElektrowni()).get(i).ObliczDochod();
+                (gracz.getListaElektrowni()).get(i).ObliczDochod(gracz.getListaElektrowni().get(i));
             }
 
             Symulator.menuWyboru(gracz);

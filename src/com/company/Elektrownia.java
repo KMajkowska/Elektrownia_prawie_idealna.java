@@ -28,9 +28,7 @@ public abstract class Elektrownia implements Serializable, ObliczDochodElektrown
 	protected WytwarzanieEnergiiElektrycznej wytwarzanieEnergiiElektrycznej;
 	protected ObliczDochodElektrowni obliczDochodElektrowni;
 
-	public void ObliczDochod(){
-		obliczDochodElektrowni.ObliczDochod(this);
-	}
+
 
 	public void wykonajReakcjaNaAwarieZasilania() {
 		reakcjaNaAwarieZasilania.ReakcjeNaAwarieZasilania(this);
