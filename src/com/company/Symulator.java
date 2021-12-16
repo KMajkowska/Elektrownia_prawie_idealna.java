@@ -67,30 +67,46 @@ public class Symulator {
         Scanner scan = new Scanner(System.in);
         int numer;
         while (f) {
-            System.out.println("Wybierz opcję:" + "\n" +
-                    "1 - Zakup elektrowni" + "\n" +
-                    "2 - Wybierz reakcję na awarie zasilania" + "\n" +
-                    "3 - Wybierz reakcję na atak terrorystyczny" + "\n" +
-                    "4 - Sprzedaj elektrownie" + "\n" +
-                    "5 (i inne) - Przejdz do nastepnego dnia + \n");
-            numer = scan.nextInt();
-            switch (numer) {
-                case 1:
-                    gracz.zakupElektrowni();
-                    break;
-                case 2:
-                    ReakcjaNaAwarieZasilania reakcjaAwaria = zmienRekacjeAwaria();
-                    WyborElektrowni(gracz).ustawReakcjeNaAwarie(reakcjaAwaria);
-                    break;
-                case 3:
-                    ReakcjeNaAtakTerrorystyczny reakcjaAtak = zmienReakcjeAtak();
-                    WyborElektrowni(gracz).ustawReakcjeNaAtak(reakcjaAtak);
-                    break;
-                case 4:
-                    gracz.SprzedajElektrownie();
-                    break;
-                default:
-                    f=false;
+            if (gracz.getListaElektrowni().isEmpty()) {
+                System.out.println("Wybierz opcję:" + "\n" +
+                        "1 - Zakup elektrowni" + "\n" +
+                        "2 (i inne) - Przejdz do nastepnego dnia + \n");
+
+                numer = scan.nextInt();
+                switch (numer) {
+                    case 1:
+                        gracz.zakupElektrowni();
+                        break;
+                    default:
+                        f = false;
+                }
+            }
+            else {
+                System.out.println("Wybierz opcję:" + "\n" +
+                        "1 - Zakup elektrowni" + "\n" +
+                        "2 - Wybierz reakcję na awarie zasilania" + "\n" +
+                        "3 - Wybierz reakcję na atak terrorystyczny" + "\n" +
+                        "4 - Sprzedaj elektrownie" + "\n" +
+                        "5 (i inne) - Przejdz do nastepnego dnia + \n");
+                numer = scan.nextInt();
+                switch (numer) {
+                    case 1:
+                        gracz.zakupElektrowni();
+                        break;
+                    case 2:
+                        ReakcjaNaAwarieZasilania reakcjaAwaria = zmienRekacjeAwaria();
+                        WyborElektrowni(gracz).ustawReakcjeNaAwarie(reakcjaAwaria);
+                        break;
+                    case 3:
+                        ReakcjeNaAtakTerrorystyczny reakcjaAtak = zmienReakcjeAtak();
+                        WyborElektrowni(gracz).ustawReakcjeNaAtak(reakcjaAtak);
+                        break;
+                    case 4:
+                        gracz.SprzedajElektrownie();
+                        break;
+                    default:
+                        f = false;
+                }
             }
         }
     }

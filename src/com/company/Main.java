@@ -29,7 +29,6 @@ public class Main {
                  break;
             default:
                 System.out.println("Niewłasciwy wybór");
-
         }
         boolean f = true;
         while(f) {
@@ -39,12 +38,6 @@ public class Main {
 
             Symulator.menuWyboru(gracz);
         }
-
-
-
-
-
-
 
         System.out.println(gracz.toString());
 
