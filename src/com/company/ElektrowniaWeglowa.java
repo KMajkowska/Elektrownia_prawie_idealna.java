@@ -5,6 +5,7 @@ import com.company.Awarie.Sposob1ReakcjaNaAwarieZasilania;
 import com.company.Wytwarzanie.SpalaniePaliwKopalnych;
 import com.company.uslugodawcy.DostawcaWegla;
 import com.company.uslugodawcy.DystrybutorPradu;
+import com.company.Dochod.DochodKopalniana;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -92,6 +93,6 @@ public class ElektrowniaWeglowa extends ElektrowniaNaPaliwoStale  {
 
     @Override
     public float ObliczDochod(Elektrownia e) {
-        return 0;
+        return obliczDochodElektrowni.ObliczDochod(this);
     }
 }

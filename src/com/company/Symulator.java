@@ -70,12 +70,16 @@ public class Symulator {
             if (gracz.getListaElektrowni().isEmpty()) {
                 System.out.println("Wybierz opcję:" + "\n" +
                         "1 - Zakup elektrowni" + "\n" +
-                        "2 (i inne) - Przejdz do nastepnego dnia + \n");
+                        "2 - Spawdz balans" + "\n" +
+                        "3 (i inne) - Przejdz do nastepnego dnia + \n");
 
                 numer = scan.nextInt();
                 switch (numer) {
                     case 1:
                         gracz.zakupElektrowni();
+                        break;
+                    case 2:
+                        System.out.println(gracz.getBalans());
                         break;
                     default:
                         f = false;
@@ -87,7 +91,8 @@ public class Symulator {
                         "2 - Wybierz reakcję na awarie zasilania" + "\n" +
                         "3 - Wybierz reakcję na atak terrorystyczny" + "\n" +
                         "4 - Sprzedaj elektrownie" + "\n" +
-                        "5 (i inne) - Przejdz do nastepnego dnia + \n");
+                        "5 - Sprawdz balans" + "\n" +
+                        "6 (i inne) - Przejdz do nastepnego dnia + \n");
                 numer = scan.nextInt();
                 switch (numer) {
                     case 1:
@@ -104,6 +109,9 @@ public class Symulator {
                     case 4:
                         gracz.SprzedajElektrownie();
                         break;
+                    case 5:
+                        System.out.println(gracz.getBalans());
+                        break;
                     default:
                         f = false;
                 }
@@ -113,25 +121,21 @@ public class Symulator {
 
     public static void AtakTerrorystyczny() {
         Random random = new Random();
-        int numer;
-        switch (numer = random.nextInt(1,10)) {
+        int numer = random.nextInt(1,10);
+        switch (numer) {
             case 1:
-
                 break;
             case 2:
-
                 break;
             case 3:
-                System.out.println("");
+                System.out.println("dtrcccy");
                 break;
-
-
         }
     }
     public static void rozneWydarzeniaLosowe () {
         Random random = new Random();
-        int numer;
-        switch (numer = random.nextInt(1,10)) {
+        int numer = random.nextInt(1,10);
+        switch (numer) {
             case 1:
                 System.out.println("Elektrownia została zaatakowana przez terrorystów");
                 AtakTerrorystyczny();
