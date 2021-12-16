@@ -34,6 +34,7 @@ public class Main {
                  break;
             default:
                 System.out.println("Niewłasciwy wybór");
+                return;
         }
         while(gracz.getBalans()>0) {
             for (int i = 0; i < gracz.getListaElektrowni().size(); i++) {
@@ -50,12 +51,16 @@ public class Main {
                     if (gracz.getListaElektrowni().isEmpty()) {
                         System.out.println("Wybierz opcję:" + "\n" +
                                 "1 - Zakup elektrowni" + "\n" +
-                                "2 (i inne) - Przejdz do nastepnego dnia + \n");
+                                "2 - Pokaz stan konta" + "\n" +
+                                "3 (i inne) - Przejdz do nastepnego dnia + \n");
 
                         numer = scan.nextInt();
                         switch (numer) {
                             case 1:
                                 gracz.zakupElektrowni();
+                                break;
+                            case 2:
+                                System.out.println(gracz.getBalans());
                                 break;
                             default:
                                 f = false;
@@ -66,8 +71,10 @@ public class Main {
                                 "2 - Wybierz reakcję na awarie zasilania" + "\n" +
                                 "3 - Wybierz reakcję na atak terrorystyczny" + "\n" +
                                 "4 - Sprzedaj elektrownie" + "\n" +
-                                "5 - Pokarz posiadane elektrownie \n" +
-                                "6 (i inne) - Przejdz do nastepnego dnia + \n");
+                                "5 - Pokaz posiadane elektrownie \n" +
+                                "6 - Pokaz stan konta \n" +
+                                "7 - Zakończ gre \n" +
+                                "INNE - Przejdz do nastepnego dnia i zapisz postępy");
                         numer = scan.nextInt();
                         switch (numer) {
                             case 1:
@@ -87,7 +94,12 @@ public class Main {
                             case 5:
                                 gracz.show();
                                 break;
-
+                            case 6:
+                                System.out.println(gracz.getBalans());
+                                break;
+                            case 7:
+                                System.out.println("\nGra zakończona!\n");
+                                return;
                             default:
                                 f = false;
                         }
@@ -98,6 +110,7 @@ public class Main {
                 rozneWydarzeniaLosowe(gracz.getListaElektrowni().get(i));
             }
         }
+        System.out.println("Twoje pieniadze sie skonczyły, koniec gry!");
 
     }
 

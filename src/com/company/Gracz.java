@@ -17,8 +17,14 @@ public class Gracz implements Serializable {
     private static final long serialVersionUID = 1L;
 
     public Gracz() {
-        balans = 5000;
+        balans = 6000f;
         listaElektrowni = new ArrayList<>();
+        DystrybutorPradu Tauron = new DystrybutorPradu();
+        DostawcaWegla Rosja = new DostawcaWegla();
+        Wlasciciel NajtanszyOdbiorSmieci = new Wlasciciel("NajtanszyOdbiorSmieci", "PL83762346", "Karol Wiśnia");
+        Wlasciciel Promyk = new Wlasciciel("Promyk", "PL46372837", "Kamil Glik");
+        OdbiorcaOdpadow Odbiorca1 = new OdbiorcaOdpadow(34.56f, NajtanszyOdbiorSmieci);
+        OdbiorcaOdpadow Odbiorca2 = new OdbiorcaOdpadow(43.34f, Promyk);
     }
 
     public void zakupElektrowni() {
@@ -55,7 +61,7 @@ public class Gracz implements Serializable {
                 balans -= 2500;
                 break;
             case 4:
-                el = new ElektrowniaFotowoltaiczna("Brudzew", 100, 300, 1, own, false, "10%", Tauron);
+                el = new ElektrowniaFotowoltaiczna("Brudzew", 100, 300, 1, own, false, 10, Tauron);
                 listaElektrowni.add(el);
                 balans -= 5000;
                 break;
@@ -99,4 +105,7 @@ public class Gracz implements Serializable {
         return listaElektrowni;
     }
 
+    public void odejmijBalans(float x) {this.balans -= x;}
+
+    public void dodajBalans(float x) {this.balans += x;}
 }

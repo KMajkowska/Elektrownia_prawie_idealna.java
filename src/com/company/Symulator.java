@@ -83,7 +83,7 @@ public class Symulator {
                 AwariaZasilania(e);
                 break;
             default:
-                System.out.println("Nic sie nie stalo");
+                System.out.println("\nNic sie nie stalo, to był spokojny dzień.....\n");
                 break;
 
         }

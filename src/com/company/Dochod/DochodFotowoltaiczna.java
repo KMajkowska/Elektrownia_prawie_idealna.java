@@ -5,6 +5,9 @@ import com.company.Elektrownia;
 import com.company.Elektrownia;
 import com.company.ElektrowniaAtomowa;
 import com.company.ElektrowniaFotowoltaiczna;
+import com.company.uslugodawcy.DystrybutorPradu;
+
+import java.io.Serializable;
 
 public class DochodFotowoltaiczna implements ObliczDochodElektrowni {
 //    public float ObliczDochod(Elektrownia e){
@@ -14,6 +17,6 @@ public class DochodFotowoltaiczna implements ObliczDochodElektrowni {
     @Override
     public float ObliczDochod(Elektrownia e) {
 
-        return ((ElektrowniaFotowoltaiczna) e).getZuzyciePaneli() * e.getMocChwilowa() * e.getDystrybutor().getCenaSkupu
+        return e.getMocChwilowa() * e.getDystrybutor().getCenaSkupu();
     }
 }

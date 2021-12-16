@@ -16,7 +16,7 @@ public class ElektrowniaFotowoltaiczna extends Elektrownia {
 	
 
 	public ElektrowniaFotowoltaiczna(String Miasto, int MocChwilowa, int MocMaksymalna, int LiczbaPracownikow, Wlasciciel wlasciciel,
-			boolean czyPracuje, String ZuzyciePaneli, DystrybutorPradu Dystrybutor)
+			boolean czyPracuje, float ZuzyciePaneli, DystrybutorPradu Dystrybutor)
 	{
 		super(Miasto, MocChwilowa, MocMaksymalna, LiczbaPracownikow, czyPracuje, wlasciciel, Dystrybutor);
 		
