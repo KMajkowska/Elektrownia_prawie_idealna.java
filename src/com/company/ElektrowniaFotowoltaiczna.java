@@ -50,4 +50,9 @@ public class ElektrowniaFotowoltaiczna extends Elektrownia {
 		return "ElektrowniaFotowoltaiczna: " + super.toString() +
 				"\nZuzyciePaneli: " + ZuzyciePaneli + '\'';
 	}
+
+	@Override
+	public float ObliczDochod(Elektrownia e) {
+		return 0;
+	}
 }

@@ -18,7 +18,7 @@ public class Main {
 
         Gracz gracz = null;
         Scanner scan = new Scanner(System.in);
-        System.out.println("1 - wczytaj gracza  \n 2 - Stwórz nowego gracza");
+        System.out.println("1 - wczytaj gracza  \n2 - Stwórz nowego gracza");
         int a = scan.nextInt();
         switch (a){
             case 1:
@@ -27,6 +27,9 @@ public class Main {
             case 2:
                  gracz = new Gracz();
                  break;
+            default:
+                System.out.println("Niewłasciwy wybór");
+
         }
         boolean f = true;
         while(f) {

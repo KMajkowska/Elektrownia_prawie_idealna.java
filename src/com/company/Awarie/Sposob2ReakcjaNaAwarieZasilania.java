@@ -13,9 +13,12 @@ public class Sposob2ReakcjaNaAwarieZasilania implements ReakcjaNaAwarieZasilania
     @Override
     public void ReakcjeNaAwarieZasilania(Elektrownia e) {
 
-        System.out.println("Procedura dla: awaria w jednym bloku");
-        e.setMocChwilowa(e.getMocChwilowa() -100);
-        System.out.println("Zmniejszono moc jednego bloku");
+        e.setMocMaksymalna(80);
+
+        e.setMocChwilowa(50);
+
+        System.out.println("Z powodu awarii elektrownia obnizyla swoja moc maksymalna do 80% oraz moc chwilowa do 50%");
+
     }
 
 }

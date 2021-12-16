@@ -6,3 +6,5 @@ public interface ReakcjeNaAtakTerrorystyczny  {
 
     void ReakcjaNaAtakTerrorystyczny(Elektrownia e);
 }
+
+

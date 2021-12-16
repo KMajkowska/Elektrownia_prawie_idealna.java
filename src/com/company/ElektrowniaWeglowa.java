@@ -89,4 +89,9 @@ public class ElektrowniaWeglowa extends ElektrowniaNaPaliwoStale  {
                 "\nIloscWeglaWMagazynie: " + IloscWeglaWMagazynie +
                 "\nMaksymalna Pojemność Magazynu: " + MaxPojemnoscMagazynu;
     }
+
+    @Override
+    public float ObliczDochod(Elektrownia e) {
+        return 0;
+    }
 }

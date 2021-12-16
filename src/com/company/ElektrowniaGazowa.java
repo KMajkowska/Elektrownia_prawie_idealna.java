@@ -52,4 +52,9 @@ public class ElektrowniaGazowa extends ElektrowniaNaPaliwoStale  {
 				"\nDostawcaGazu: " + DostawcaGazu.toString() +
 				"\nMaksymalna pojemność magazynu: " + MaxPojemnoscMagazynu;
 	}
+
+	@Override
+	public float ObliczDochod(Elektrownia e) {
+		return 0;
+	}
 }

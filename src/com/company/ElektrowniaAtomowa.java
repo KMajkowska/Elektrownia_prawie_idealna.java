@@ -92,4 +92,8 @@ public class ElektrowniaAtomowa extends Elektrownia {
                 "\nOdbiorcaOdpadow: " + Arrays.toString(OdbiorcaOdpadow);
     }
 
+    @Override
+    public float ObliczDochod(Elektrownia e) {
+        return 0;
+    }
 }

@@ -17,5 +17,9 @@ public class Sposob1ReakcjaNaAtakTerrorystyczny implements ReakcjeNaAtakTerrorys
         //switch z losowym intem ktory ma 20% szans że jak nie wyłączymy elektrowni to mogą okraść itp.
 
         //set
+
+        e.setCzyPracuje (false);
+
+        System.out.println("Z powodu ataku elektrownia zostaje zamkniêta!");
     }
 }
